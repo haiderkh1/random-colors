@@ -22,26 +22,23 @@ export default {
       color: "",
     };
   },
-
   created: function() {
     this.changeColor();
     document.addEventListener("keydown", (e) => {
       if (e.code === "Space") this.changeColor();
     });
   },
-
   watch: {
     color: function(val) {
       document.body.style.backgroundColor = val;
     },
   },
-
   methods: {
     changeColor: function() {
       this.color = "#" + Math.floor(Math.random() * 6777215).toString(16);
     },
-    cambioElFondo: function() {
-      this.color = "newColor";
+    cambioElFondo: function(newColor) {
+      this.color = newColor;
     },
   },
 };
